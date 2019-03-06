@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace RestaurationApp.Models
 {
-    public class RestaurantTables
+    public class RestaurantTable
     {
+        public int Id { get; set; }
+        public int NumberOfChairs { get; set; }
+        
     }
 }
