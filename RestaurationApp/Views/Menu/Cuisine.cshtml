@@ -1,0 +1,17 @@
+﻿@model RestaurationApp.ViewModels.MenuViewModel
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h1>View</h1>
+<table>
+
+    @foreach (var dish in Model.Dishes)
+    {
+        <tr>
+            <td>@dish.DishName</td>
+            <td>@dish.Cost</td>
+        </tr>
+    }
+
+    </table>

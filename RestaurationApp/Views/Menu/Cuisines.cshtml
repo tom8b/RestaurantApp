@@ -1,0 +1,15 @@
+﻿@model RestaurationApp.ViewModels.CuisinesViewModel
+@{
+    ViewData["Title"] = "Cuisines";
+}
+
+<h1>Cuisines</h1>
+
+<table>
+@foreach (var cuisine in Model.cuisines)
+{
+    <tr>
+        <th><a asp-action="Cuisine" asp-route-id="@cuisine.Id" >@cuisine.CuisineName</a></th>
+    </tr>
+}
+</table>
