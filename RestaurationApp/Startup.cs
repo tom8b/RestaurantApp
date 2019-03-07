@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RestaurationApp.Models;
+using RestaurationApp.Services;
+using RestaurationApp.Services.Interfaces;
 
 namespace RestaurationApp
 {
@@ -36,6 +38,8 @@ namespace RestaurationApp
             services.AddDbContext<RestaurantContext>(options => options
             .UseSqlServer(Configuration
             .GetConnectionString("RestaurantDatabase")));
+
+            services.AddScoped<IDishService, DishService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
