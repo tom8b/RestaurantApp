@@ -44,6 +44,28 @@ namespace RestaurationApp.Services
                 .Include(d => d.Cuisine)
                 .Where(d => d.Cuisine.Id == CouisineId);
         }
+
+        public DishDetailViewModel GetDishDetailObject(int id)
+        {
+            var query = _context.Dishes
+                .Include(d => d.TypeOfDish)
+                .Include(d => d.Cuisine)
+                .FirstOrDefault(d => d.Id == id);
+
+            var dishObject = new DishDetailViewModel();
+
+            dishObject.cost = query.Cost;
+            dishObject.cuisineName = query.Cuisine.CuisineName;
+            dishObject.dishDescribtion = query.Description;
+            dishObject.dishName = query.DishName;
+            dishObject.typeOfDish = query.TypeOfDish.Name;
+            dishObject.CuisineId = query.Cuisine.Id;
+
+            return dishObject;
+
+        }
+
+
         #endregion
 
 
@@ -53,6 +75,17 @@ namespace RestaurationApp.Services
         {
             return _context.Cuisines;
         }
+
+       
+
+
+
+
+
+        #endregion
+
+        #region TypeOfDish metods
+
 
 
         #endregion

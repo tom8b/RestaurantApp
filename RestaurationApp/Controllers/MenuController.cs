@@ -31,7 +31,7 @@ namespace RestaurationApp.Controllers
             return View(model);
         }
         /// <summary>
-        /// 
+        /// Zwraca wszystkie dania z danej kuchni
         /// </summary>
         /// <param name="Id">Parametr okresla id kuchni</param>
         /// <returns></returns>
@@ -39,6 +39,13 @@ namespace RestaurationApp.Controllers
         {
             var model = new MenuViewModel();
             model.Dishes = _dish.GetDishesFromCuisine(Id);
+            return View(model);
+        }
+
+        public IActionResult DishDetail(int Id)
+        {
+            var model = _dish.GetDishDetailObject(Id);
+
             return View(model);
         }
     }

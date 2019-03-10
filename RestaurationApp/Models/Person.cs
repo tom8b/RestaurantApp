@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace RestaurationApp.Models
 {
-    public class Cuisine
+    public class Person
     {
         public int Id { get; set; }
-        public string CuisineName { get; set; }
-        public string CuisineDescription { get; set; }
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string ImgUrl { get; set; }
+        public string Description { get; set; }
     }
 }

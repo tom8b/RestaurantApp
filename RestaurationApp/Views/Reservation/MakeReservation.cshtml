@@ -1,0 +1,20 @@
+﻿@model RestaurationApp.Models.Reservation
+
+@{
+    ViewData["Title"] = "MakeReservation";
+}
+
+<h1>MakeReservation</h1>
+
+<form method="post">
+    <label asp-for="@Model.FirstName"></label>
+    <input type="text" asp-for="@Model.FirstName" />
+    <span asp-validation-for="@Model.FirstName"></span>
+
+    <label asp-for="@Model.SecondName"></label>
+    <input type="text" asp-for="@Model.SecondName" />
+    <span asp-validation-for="@Model.SecondName"></span>
+
+
+
+</form>

@@ -5,11 +5,22 @@
 
 <h1>Cuisines</h1>
 
-<table>
-@foreach (var cuisine in Model.cuisines)
-{
-    <tr>
-        <th><a asp-action="Cuisine" asp-route-id="@cuisine.Id" >@cuisine.CuisineName</a></th>
-    </tr>
-}
-</table>
+<section id="boxes">
+    <div class="container">
+
+        <ul>
+            @foreach (var cuisine in Model.cuisines)
+            {
+                <div class="box">
+                    <img src="@Url.Content(cuisine.ImgUrl)" alt="DODAJZDJECIE"/>
+                    <h3><a asp-action="Cuisine" asp-route-id="@cuisine.Id">@cuisine.CuisineName</a></h3>
+                    <p>@cuisine.CuisineDescription </p>
+                </div>
+            }
+        </ul>
+
+    </div>
+</section>
+
+
+

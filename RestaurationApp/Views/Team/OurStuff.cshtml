@@ -1,0 +1,14 @@
+﻿@model RestaurationApp.ViewModels.StuffViewModel
+
+@foreach (var person in Model.People)
+{
+<div class="person-box">
+    <img class="person-image" src="@Url.Content(person.ImgUrl)" alt="BRAK OBRAZU" />
+    <h1> @person.FirstName @person.LastName</h1>
+    <a>@person.Description</a>
+
+    <hr />
+</div>
+}
+
+<div class="person-box2"></div>

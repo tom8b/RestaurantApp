@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestaurationApp.Models;
 
 namespace RestaurationApp.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20190309184038_Added Person Model")]
+    partial class AddedPersonModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,25 +61,6 @@ namespace RestaurationApp.Migrations
                     b.HasIndex("TypeOfDishId");
 
                     b.ToTable("Dishes");
-                });
-
-            modelBuilder.Entity("RestaurationApp.Models.Person", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("ImgUrl");
-
-                    b.Property<string>("LastName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("People");
                 });
 
             modelBuilder.Entity("RestaurationApp.Models.Reservation", b =>

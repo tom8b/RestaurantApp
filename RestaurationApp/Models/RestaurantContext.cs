@@ -18,5 +18,6 @@ namespace RestaurationApp.Models
         public DbSet<TypeOfDish> TypesOfDishes { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<RestaurantTable> RestaurantTables { get; set; }
+        public DbSet<Person> People { get; set; }
     }
 }

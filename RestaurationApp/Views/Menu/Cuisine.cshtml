@@ -3,15 +3,20 @@
     ViewData["Title"] = "Menu";
 }
 
-<h1>View</h1>
-<table>
+<h1>Dishes</h1>
+<ul>
 
     @foreach (var dish in Model.Dishes)
     {
-        <tr>
-            <td>@dish.DishName</td>
-            <td>@dish.Cost</td>
-        </tr>
+    <li>
+        <a asp-action="DishDetail" asp-route-id="@dish.Id">@dish.DishName</a>
+        <a>@dish.Cost</a>
+    </li>
+    <hr />
     }
 
-    </table>
+</ul>
+
+<a asp-action="Cuisines">
+    <input type="button" value="Back" />
+</a>

@@ -1,0 +1,17 @@
+﻿@model RestaurationApp.ViewModels.DishDetailViewModel
+@{
+    ViewData["Title"] = "Dish Details";
+}
+
+<h1>DishDetail</h1>
+
+<div>@Model.dishName</div>
+<div>@Model.dishDescribtion</div>
+<div>@Model.cuisineName</div>
+<div>@Model.typeOfDish</div>
+<div>@Model.cost</div>
+
+<a asp-action="Cuisine" asp-route-id="@Model.CuisineId">
+    <input type="button" value="Back" />
+</a>
+

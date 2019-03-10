@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RestaurationApp.Models;
 using RestaurationApp.Services;
+using RestaurationApp.Services.Implemented;
 using RestaurationApp.Services.Interfaces;
 
 namespace RestaurationApp
@@ -40,6 +41,8 @@ namespace RestaurationApp
             .GetConnectionString("RestaurantDatabase")));
 
             services.AddScoped<IDishService, DishService>();
+            services.AddScoped<IReservationService, ReservationService>();
+            services.AddScoped<IPersonService, PersonService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
