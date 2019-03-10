@@ -1,7 +1,21 @@
-﻿@{
+﻿@model RestaurationApp.ViewModels.MenuViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<h1 class="title">Our chef reccomends!</h1>
+<div>
+    @foreach (var dish in Model.Dishes)
+    {
+        <div class="box-random-dishes">
+            
+            <div><img class="random-dish" src="@Url.Content(dish.ImgUrl)" alt="BRAK" /></div>
+            <a asp-action="DishDetail" asp-controller="Menu" asp-route-id="@dish.Id"> @dish.DishName</a>
+            @dish.Cost
 
-
-
+            <hr />
+        </div>
+    }
+</div>
+<div class="person-box2"></div>

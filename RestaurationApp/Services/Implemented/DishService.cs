@@ -33,6 +33,13 @@ namespace RestaurationApp.Services
             return _context.Dishes.FirstOrDefault(dish => dish.Id == id);
         }
 
+        public IEnumerable<Dish> GetRandomDishes(int x)
+        {
+            var dishes = _context.Dishes.OrderBy(d => Guid.NewGuid()).Take(x);
+            return dishes;
+        }
+
+
         /// <summary>
         ///
         /// </summary>
@@ -77,6 +84,7 @@ namespace RestaurationApp.Services
         }
 
        
+
 
 
 

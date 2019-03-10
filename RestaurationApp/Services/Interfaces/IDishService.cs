@@ -15,10 +15,12 @@ namespace RestaurationApp.Services.Interfaces
         IEnumerable<Dish> GetDishesFromCuisine(int CuisineId);
         Dish GetDishById(int id);
         DishDetailViewModel GetDishDetailObject(int id);
+        IEnumerable<Dish> GetRandomDishes(int x);
         #endregion
 
         #region Cuisine methods
         IEnumerable<Cuisine> GetAllCuisines();
+        
         
         #endregion
 

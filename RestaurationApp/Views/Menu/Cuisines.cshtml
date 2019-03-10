@@ -2,9 +2,10 @@
 @{
     ViewData["Title"] = "Cuisines";
 }
-
-<h1>Cuisines</h1>
-
+<br />
+<div class="title">
+    <h1>Cuisines</h1>
+</div>
 <section id="boxes">
     <div class="container">
 
@@ -15,6 +16,7 @@
                     <img src="@Url.Content(cuisine.ImgUrl)" alt="DODAJZDJECIE"/>
                     <h3><a asp-action="Cuisine" asp-route-id="@cuisine.Id">@cuisine.CuisineName</a></h3>
                     <p>@cuisine.CuisineDescription </p>
+                    <hr />
                 </div>
             }
         </ul>

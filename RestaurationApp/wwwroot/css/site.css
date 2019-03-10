@@ -15,6 +15,7 @@ body {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    
 }
 
 #AppBox {
@@ -37,6 +38,8 @@ ul {
     padding-right: 20px;
     color: #ffffff;
 }
+
+
 
 /*Header*/
 header {
@@ -129,13 +132,14 @@ header {
 
 #boxes {
     margin-top: 20px;
+
 }
 
     #boxes .box {
         float: left;
         text-align: center;
-        width: 30%;
-        padding: 10px;
+        width: 33%;
+        /*padding: 10px;*/
     }
 
         #boxes .box img {
@@ -152,7 +156,7 @@ footer {
 
 .person-image{
     width:30%;
-    /*height:20%;*/
+    
     
 }
 
@@ -165,3 +169,23 @@ footer {
 .person-box2 {
     clear: both;
 }
+
+.box-random-dishes{
+    width:33%;
+    float:left;
+    text-align:center;
+}
+
+.random-dish{
+    width:80%;
+}
+
+.title {
+    text-align:center;
+}
+
+.title {
+    background-color: #e8491d;
+    text-align: center;
+}
+
